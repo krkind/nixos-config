@@ -177,7 +177,7 @@
               desktop = "plasma";
             };
           };
-          ripxowfh = lib.nixosSystem {
+          krkindwork = lib.nixosSystem {
             modules = [
               ./nixos
               agenix.nixosModules.age
@@ -191,7 +191,7 @@
                 home-manager.extraSpecialArgs = {
                   inherit inputs outputs stateVersion darkmode;
                   desktop = "xfce";
-                  hostname = "ripxowfh";
+                  hostname = "krkindwork";
                   username = "ripxorip";
                   platform = "x86_64-linux";
                 };
@@ -199,7 +199,7 @@
             ];
             specialArgs = {
               inherit inputs outputs stateVersion;
-              hostname = "ripxowfh";
+              hostname = "krkindwork";
               username = "ripxorip";
               desktop = "xfce";
             };
