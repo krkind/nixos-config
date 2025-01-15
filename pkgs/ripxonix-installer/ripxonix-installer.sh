@@ -14,7 +14,7 @@ if [ "$(id -u)" -eq 0 ]; then
 fi
 
 if [ ! -d "$HOME/dev/ripxonix/.git" ]; then
-  git clone https://github.com/ripxorip/ripxonix.git "$HOME/dev/ripxonix"
+  git clone https://github.com/krkind/nixos-config.git "$HOME/dev/ripxonix"
 fi
 
 pushd "$HOME/dev/ripxonix"
