@@ -1,4 +1,4 @@
-# Old HP
+# Krkinds Work Computer
 { config, lib, pkgs, ... }:
 {
   imports = [
@@ -7,20 +7,27 @@
     ../_mixins/services/flatpak.nix
     ../_mixins/services/pipewire.nix
     ../_mixins/virt
-    (import ./disks.nix { })
   ];
 
-  boot.loader.systemd-boot.enable = true;
-  boot.loader.efi.canTouchEfiVariables = true;
-
-  boot.initrd.availableKernelModules = [ "nvme" "xhci_pci" "usb_storage" "sd_mod" ];
+  boot.initrd.availableKernelModules = [ "xhci_pci" "thunderbolt" "vmd" "nvme" "usb_storage" "sd_mod" "rtsx_pci_sdmmc" ];
   boot.initrd.kernelModules = [ ];
   boot.kernelModules = [ "kvm-intel" ];
   boot.extraModulePackages = [ ];
 
-  # See https://github.com/Mic92/envfs (for scripts to get access to /bin/bash etc.)
-  services.envfs.enable = true;
-  programs.adb.enable = true;
+  fileSystems."/" =
+    { device = "/dev/disk/by-uuid/d92095ff-a062-4c6f-8022-bac98f45e96d";
+      fsType = "ext4";
+    };
+
+  fileSystems."/boot" =
+    { device = "/dev/disk/by-uuid/F256-A388";
+      fsType = "vfat";
+      options = [ "fmask=0077" "dmask=0077" ];
+    };
+
+  swapDevices =
+    [ { device = "/dev/disk/by-uuid/bd16cd13-cca1-4346-a7e1-adca8a3643d7"; }
+    ];
 
   # Enables DHCP on each ethernet and wireless interface. In case of scripted networking
   # (the default) this is the recommended approach. When using systemd-networkd it's
@@ -29,21 +36,6 @@
   networking.useDHCP = lib.mkDefault true;
   # networking.interfaces.wlp0s20f3.useDHCP = lib.mkDefault true;
 
-  services.udev.extraRules = ''
-    SUBSYSTEM=="usb", ATTR{idVendor}=="04da", ATTR{idProduct}=="10fa", MODE="0666", GROUP="adbusers"
-  '';
-
   nixpkgs.hostPlatform = lib.mkDefault "x86_64-linux";
-  powerManagement.cpuFreqGovernor = lib.mkDefault "powersave";
   hardware.cpu.intel.updateMicrocode = lib.mkDefault config.hardware.enableRedistributableFirmware;
-
-  environment.systemPackages = with pkgs; [
-    (pkgs.python3.withPackages (ps: with ps; [ pyserial python-lsp-server ]))
-  ];
-  services.logind.lidSwitchExternalPower = "ignore";
-
-  services.xserver.displayManager.startx.enable = true;
-  services.xrdp.enable = true;
-  services.xrdp.defaultWindowManager = "xfce4-session";
-  services.xrdp.openFirewall = true;
 }
