@@ -10,13 +10,6 @@
     autoRepeatDelay = 250;
     autoRepeatInterval = 50;
     xkb.options = "eurosign:e,caps:ctrl_modifier";
-    xkb.layout = "rip";
-    xkb.extraLayouts.rip = {
-      description = "Ripxorip Colemak DH";
-      languages = [ "en" "se" ];
-      symbolsFile =
-        ./colemak_dh_rip;
-    };
   };
 
 
@@ -29,7 +22,6 @@
     vlc
     kitty
     spotify
-    feishin
     usbip_plugger
   ];
 
