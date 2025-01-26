@@ -15,9 +15,9 @@ in
   users.users.kristian = {
     isNormalUser = true;
     initialPassword = "ripxonix";
-    openssh.authorizedKeys.keys = [
-      "ssh-ed25519 AAAAC3NzaC1lZDI1NTE5AAAAIPV/ktL05mbhMNHis8zdpYUk76GcnVWXFrxEc8Hvtxhq ripxorip"
-    ];
+    # openssh.authorizedKeys.keys = [
+    #  "ssh-ed25519 AAAAC3NzaC1lZDI1NTE5AAAAIPV/ktL05mbhMNHis8zdpYUk76GcnVWXFrxEc8Hvtxhq ripxorip"
+    # ];
     extraGroups = [
       "wheel"
       "dialout"
