@@ -9,7 +9,7 @@ in
   environment.systemPackages = with pkgs; [
     vim
     wget
-    git
+    gitFull
   ];
 
   users.users.ripxorip = {
