@@ -81,7 +81,8 @@
   nix = {
     gc = {
       automatic = true;
-      options = "--delete-older-than 14d";
+      dates = "weekly";
+      options = "--delete-older-than 14d"; 
     };
 
     # This will add each flake input as a registry
