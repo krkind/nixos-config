@@ -9,12 +9,16 @@
     ../_mixins/virt
   ];
 
+  hardware.bluetooth.enable = true; # enables support for Bluetooth
+  # hardware.bluetooth.powerOnBoot = true; # powers up the default Bluetooth controller on boot
+  
   # Bootloader.
   boot.loader.systemd-boot.enable = true;
 
   boot.initrd.availableKernelModules = [ "xhci_pci" "thunderbolt" "vmd" "nvme" "usb_storage" "sd_mod" "rtsx_pci_sdmmc" ];
   boot.initrd.kernelModules = [ ];
   boot.kernelModules = [ "kvm-intel" ];
+  boot.kernelParams = [ "i915.force_probe=7d55" ];  # Needed for proper installation of Intel Arc firmware
   boot.extraModulePackages = [ ];
 
   fileSystems."/" =
@@ -41,4 +45,5 @@
 
   nixpkgs.hostPlatform = lib.mkDefault "x86_64-linux";
   hardware.cpu.intel.updateMicrocode = lib.mkDefault config.hardware.enableRedistributableFirmware;
+  # hardware.enableRedistributableFirmware = true;
 }
