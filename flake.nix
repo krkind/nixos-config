@@ -183,7 +183,7 @@
               agenix.nixosModules.age
               home-manager.nixosModules.home-manager
               {
-                home-manager.users.ripxorip = {
+                home-manager.users.kristian = {
                   imports = [
                     ./home-manager
                   ];
@@ -192,7 +192,7 @@
                   inherit inputs outputs stateVersion darkmode;
                   desktop = "plasma";
                   hostname = "krkindwork";
-                  username = "ripxorip";
+                  username = "kristian";
                   platform = "x86_64-linux";
                 };
               }
@@ -200,7 +200,7 @@
             specialArgs = {
               inherit inputs outputs stateVersion;
               hostname = "krkindwork";
-              username = "ripxorip";
+              username = "kristian";
               desktop = "plasma";
             };
           };

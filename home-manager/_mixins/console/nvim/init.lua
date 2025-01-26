@@ -266,7 +266,7 @@ capabilities.textDocument.completion.completionItem.snippetSupport = true;
 nvim_lsp.ccls.setup{
     init_options = {
         cache = {
-            directory = "/home/ripxorip/.cache/ccls"
+            directory = "/home/kristian/.cache/ccls"
         };
     };
     root_dir = nvim_lsp.util.root_pattern('compile_commands.json');
@@ -422,7 +422,7 @@ require('copilot').setup()
 require("CopilotChat").setup ()
 require("copilot_cmp").setup()
 require("chatgpt").setup({
-    api_key_cmd = "cat /home/ripxorip/.secret/openai"
+    api_key_cmd = "cat /home/kristian/.secret/openai"
 })
 
 -- ==========================================

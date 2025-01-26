@@ -15,8 +15,8 @@
         adog = "log --all --decorate --oneline --graph";
         co = "checkout";
       };
-      userEmail = "ripxorip@gmail.com";
-      userName = "Philip K. Gisslow";
+      userEmail = "kristian.kinderlov@airolit.com";
+      userName = "Kristian Kinderlöv";
       extraConfig = {
         push = {
           default = "matching";
