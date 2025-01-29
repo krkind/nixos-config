@@ -190,7 +190,7 @@
                 };
                 home-manager.extraSpecialArgs = {
                   inherit inputs outputs stateVersion darkmode;
-                  desktop = "plasma";
+                  desktop = "gnome";
                   hostname = "krkindwork";
                   username = "kristian";
                   platform = "x86_64-linux";
@@ -201,7 +201,7 @@
               inherit inputs outputs stateVersion;
               hostname = "krkindwork";
               username = "kristian";
-              desktop = "plasma";
+              desktop = "gnome";
             };
           };
           airoview = lib.nixosSystem {

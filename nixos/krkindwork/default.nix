@@ -21,6 +21,9 @@
   boot.kernelParams = [ "i915.force_probe=7d55" ];  # Needed for proper installation of Intel Arc firmware
   boot.extraModulePackages = [ ];
 
+  services.envfs.enable = true;
+  services.printing.enable = true;
+
   fileSystems."/" =
     { device = "/dev/disk/by-uuid/d92095ff-a062-4c6f-8022-bac98f45e96d";
       fsType = "ext4";
