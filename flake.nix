@@ -181,6 +181,7 @@
             modules = [
               ./nixos
               agenix.nixosModules.age
+              talon-nix.nixosModules.talon
               home-manager.nixosModules.home-manager
               {
                 home-manager.users.kristian = {

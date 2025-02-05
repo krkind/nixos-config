@@ -49,4 +49,30 @@
   nixpkgs.hostPlatform = lib.mkDefault "x86_64-linux";
   hardware.cpu.intel.updateMicrocode = lib.mkDefault config.hardware.enableRedistributableFirmware;
   # hardware.enableRedistributableFirmware = true;
+
+  # In order for VSCode remote to work
+  programs.nix-ld.enable = true;
+  # programs.talon.enable = true;
+  programs.adb.enable = true;
+
+  environment.systemPackages = with pkgs; [
+    # obs-studio
+    # remmina
+    # kicad
+    # prusa-slicer
+    # wireshark
+    # reaper
+    # teams-for-linux
+    # yabridge
+    # yabridgectl
+    # wineWowPackages.unstable
+    # winetricks
+    # tuxguitar
+    # moonlight-qt
+    # linuxPackages.usbip
+    # wakeonlan
+    # distrobox
+    # samba
+    (pkgs.python3.withPackages (ps: with ps; [ pyserial python-lsp-server ]))
+  ];
 }
