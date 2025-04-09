@@ -11,7 +11,7 @@
 
   hardware.bluetooth.enable = true; # enables support for Bluetooth
   # hardware.bluetooth.powerOnBoot = true; # powers up the default Bluetooth controller on boot
-  
+
   # Bootloader.
   boot.loader.systemd-boot.enable = true;
 
@@ -58,7 +58,7 @@
   environment.systemPackages = with pkgs; [
     # obs-studio
     # remmina
-    # kicad
+    kicad
     # prusa-slicer
     # wireshark
     # reaper
