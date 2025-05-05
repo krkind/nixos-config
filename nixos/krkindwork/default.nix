@@ -61,7 +61,7 @@
     # remmina
     kicad
     # prusa-slicer
-    # wireshark
+    wireshark
     # reaper
     # teams-for-linux
     # yabridge
