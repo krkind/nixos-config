@@ -33,6 +33,8 @@
       dig
       matrix-sh
       wl-clipboard
+      notepaddqq
+      obsilian
     ];
 
     sessionVariables = {
