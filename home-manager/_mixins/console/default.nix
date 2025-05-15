@@ -34,7 +34,7 @@
       matrix-sh
       wl-clipboard
       notepadqq
-      obsilian
+      obsidian
     ];
 
     sessionVariables = {
