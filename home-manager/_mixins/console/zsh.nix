@@ -228,6 +228,13 @@ in
           "$@" &> /dev/null < /dev/null &
       }
 
+      function ulg2pile()
+      {
+        nix develop ~/dev/ulog2param -c bash -c "ulog_params "$1" > \
+        params_temp && python ~/dev/ulog2param/patch_params.py params_temp > \
+        $(basename "$1" | sed 's/ulg/params/') │  && rm params_temp"
+      }
+
       ZSH_AUTOSUGGEST_HIGHLIGHT_STYLE='fg=4'
 
       export PICO_SDK_PATH=~/dev/pico-sdk
