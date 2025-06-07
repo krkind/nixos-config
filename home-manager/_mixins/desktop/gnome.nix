@@ -1,4 +1,4 @@
-{ lib, ... }:
+{ lib, pkgs, ... }:
 with lib.hm.gvariant;
 {
   dconf.settings = {
@@ -90,6 +90,13 @@ with lib.hm.gvariant;
       name = lib.hm.gvariant.mkString "Ripxospeech F12";
     };
 
+  };
+
+  home.pointerCursor = {
+    gtk.enable = true;
+    package = pkgs.adwaita-icon-theme; # Or your preferred theme
+    name = "Adwaita";  # Or your preferred theme
+    size = 24;  # Adjust as needed
   };
 
   gtk = { };
