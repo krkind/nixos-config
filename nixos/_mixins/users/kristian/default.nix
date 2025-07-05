@@ -23,6 +23,7 @@ in
       "dialout"
       "plugdev"
       "audio"
+      "video"
     ] # Enable ‘sudo’ for the user.
     ++ ifExists [
       "docker"
