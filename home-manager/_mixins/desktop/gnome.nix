@@ -36,59 +36,59 @@ with lib.hm.gvariant;
       custom-keybindings = [ "/org/gnome/settings-daemon/plugins/media-keys/custom-keybindings/custom0/" "/org/gnome/settings-daemon/plugins/media-keys/custom-keybindings/custom1/" "/org/gnome/settings-daemon/plugins/media-keys/custom-keybindings/custom2/" "/org/gnome/settings-daemon/plugins/media-keys/custom-keybindings/custom3/" "/org/gnome/settings-daemon/plugins/media-keys/custom-keybindings/custom4/" "/org/gnome/settings-daemon/plugins/media-keys/custom-keybindings/custom5/" "/org/gnome/settings-daemon/plugins/media-keys/custom-keybindings/custom6/" "/org/gnome/settings-daemon/plugins/media-keys/custom-keybindings/custom7/" "/org/gnome/settings-daemon/plugins/media-keys/custom-keybindings/custom8/" ];
     };
 
-    "org/gnome/settings-daemon/plugins/media-keys/custom-keybindings/custom0" = {
-      binding = lib.hm.gvariant.mkString "F1";
-      command = lib.hm.gvariant.mkString "/home/kristian/dev/ripxospeech/ripxospeech.py -a command_key -k f1";
-      name = lib.hm.gvariant.mkString "Ripxospeech F1";
-    };
+    # "org/gnome/settings-daemon/plugins/media-keys/custom-keybindings/custom0" = {
+    #   binding = lib.hm.gvariant.mkString "F1";
+    #   command = lib.hm.gvariant.mkString "/home/kristian/dev/ripxospeech/ripxospeech.py -a command_key -k f1";
+    #   name = lib.hm.gvariant.mkString "Ripxospeech F1";
+    # };
 
-    "org/gnome/settings-daemon/plugins/media-keys/custom-keybindings/custom1" = {
-      binding = lib.hm.gvariant.mkString "F2";
-      command = lib.hm.gvariant.mkString "/home/kristian/dev/ripxospeech/ripxospeech.py -a command_key -k f2";
-      name = lib.hm.gvariant.mkString "Ripxospeech F2";
-    };
+    # "org/gnome/settings-daemon/plugins/media-keys/custom-keybindings/custom1" = {
+    #   binding = lib.hm.gvariant.mkString "F2";
+    #   command = lib.hm.gvariant.mkString "/home/kristian/dev/ripxospeech/ripxospeech.py -a command_key -k f2";
+    #   name = lib.hm.gvariant.mkString "Ripxospeech F2";
+    # };
 
-    "org/gnome/settings-daemon/plugins/media-keys/custom-keybindings/custom2" = {
-      binding = lib.hm.gvariant.mkString "F3";
-      command = lib.hm.gvariant.mkString "/home/kristian/dev/ripxospeech/ripxospeech.py -a command_key -k f3";
-      name = lib.hm.gvariant.mkString "Ripxospeech F3";
-    };
+    # "org/gnome/settings-daemon/plugins/media-keys/custom-keybindings/custom2" = {
+    #   binding = lib.hm.gvariant.mkString "F3";
+    #   command = lib.hm.gvariant.mkString "/home/kristian/dev/ripxospeech/ripxospeech.py -a command_key -k f3";
+    #   name = lib.hm.gvariant.mkString "Ripxospeech F3";
+    # };
 
-    "org/gnome/settings-daemon/plugins/media-keys/custom-keybindings/custom3" = {
-      binding = lib.hm.gvariant.mkString "F4";
-      command = lib.hm.gvariant.mkString "/home/kristian/dev/ripxospeech/ripxospeech.py -a command_key -k f4";
-      name = lib.hm.gvariant.mkString "Ripxospeech F4";
-    };
+    # "org/gnome/settings-daemon/plugins/media-keys/custom-keybindings/custom3" = {
+    #   binding = lib.hm.gvariant.mkString "F4";
+    #   command = lib.hm.gvariant.mkString "/home/kristian/dev/ripxospeech/ripxospeech.py -a command_key -k f4";
+    #   name = lib.hm.gvariant.mkString "Ripxospeech F4";
+    # };
 
-    "org/gnome/settings-daemon/plugins/media-keys/custom-keybindings/custom4" = {
-      binding = lib.hm.gvariant.mkString "F8";
-      command = lib.hm.gvariant.mkString "/home/kristian/dev/ripxospeech/ripxospeech.py -a command_key -k f8";
-      name = lib.hm.gvariant.mkString "Ripxospeech F8";
-    };
+    # "org/gnome/settings-daemon/plugins/media-keys/custom-keybindings/custom4" = {
+    #   binding = lib.hm.gvariant.mkString "F8";
+    #   command = lib.hm.gvariant.mkString "/home/kristian/dev/ripxospeech/ripxospeech.py -a command_key -k f8";
+    #   name = lib.hm.gvariant.mkString "Ripxospeech F8";
+    # };
 
-    "org/gnome/settings-daemon/plugins/media-keys/custom-keybindings/custom5" = {
-      binding = lib.hm.gvariant.mkString "F9";
-      command = lib.hm.gvariant.mkString "/home/kristian/dev/ripxospeech/ripxospeech.py -a command_key -k f9";
-      name = lib.hm.gvariant.mkString "Ripxospeech F9";
-    };
+    # "org/gnome/settings-daemon/plugins/media-keys/custom-keybindings/custom5" = {
+    #   binding = lib.hm.gvariant.mkString "F9";
+    #   command = lib.hm.gvariant.mkString "/home/kristian/dev/ripxospeech/ripxospeech.py -a command_key -k f9";
+    #   name = lib.hm.gvariant.mkString "Ripxospeech F9";
+    # };
 
-    "org/gnome/settings-daemon/plugins/media-keys/custom-keybindings/custom6" = {
-      binding = lib.hm.gvariant.mkString "F10";
-      command = lib.hm.gvariant.mkString "/home/kristian/dev/ripxospeech/ripxospeech.py -a command_key -k f10";
-      name = lib.hm.gvariant.mkString "Ripxospeech F10";
-    };
+    # "org/gnome/settings-daemon/plugins/media-keys/custom-keybindings/custom6" = {
+    #   binding = lib.hm.gvariant.mkString "F10";
+    #   command = lib.hm.gvariant.mkString "/home/kristian/dev/ripxospeech/ripxospeech.py -a command_key -k f10";
+    #   name = lib.hm.gvariant.mkString "Ripxospeech F10";
+    # };
 
-    "org/gnome/settings-daemon/plugins/media-keys/custom-keybindings/custom7" = {
-      binding = lib.hm.gvariant.mkString "F11";
-      command = lib.hm.gvariant.mkString "/home/kristian/dev/ripxospeech/ripxospeech.py -a command_key -k f11";
-      name = lib.hm.gvariant.mkString "Ripxospeech F11";
-    };
+    # "org/gnome/settings-daemon/plugins/media-keys/custom-keybindings/custom7" = {
+    #   binding = lib.hm.gvariant.mkString "F11";
+    #   command = lib.hm.gvariant.mkString "/home/kristian/dev/ripxospeech/ripxospeech.py -a command_key -k f11";
+    #   name = lib.hm.gvariant.mkString "Ripxospeech F11";
+    # };
 
-    "org/gnome/settings-daemon/plugins/media-keys/custom-keybindings/custom8" = {
-      binding = lib.hm.gvariant.mkString "F12";
-      command = lib.hm.gvariant.mkString "/home/kristian/dev/ripxospeech/ripxospeech.py -a command_key -k f12";
-      name = lib.hm.gvariant.mkString "Ripxospeech F12";
-    };
+    # "org/gnome/settings-daemon/plugins/media-keys/custom-keybindings/custom8" = {
+    #   binding = lib.hm.gvariant.mkString "F12";
+    #   command = lib.hm.gvariant.mkString "/home/kristian/dev/ripxospeech/ripxospeech.py -a command_key -k f12";
+    #   name = lib.hm.gvariant.mkString "Ripxospeech F12";
+    # };
 
   };
 
