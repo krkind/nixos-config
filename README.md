@@ -1,9 +1,7 @@
 # Ripxonix
 Ripxorip's NixOS &amp; Home Manager Configurations
 
-## Usage ⚒️
 ``````make
-
 #################################################################################
 #
 #               88                                               88
@@ -18,13 +16,21 @@ Ripxorip's NixOS &amp; Home Manager Configurations
 #                  88
 #
 #################################################################################
-
-# Rebuild the OS
-make os
 ``````
-### Build the ISO 💿
-`make iso`
 
 ## Inspirations 🖋️
 - Wimpy https://github.com/wimpysworld/nix-config
 - Misterio77 https://github.com/Misterio77/nix-starter-configs
+
+## Usage ⚒️
+### Build the ISO 💿
+`make iso`
+
+### Rebuild the OS
+make os
+
+### Build flake
+`sudo nixos-rebuild switch --flake .#krkindwork`
+
+### Build home manager
+`home-manager switch --flake .#kristian`

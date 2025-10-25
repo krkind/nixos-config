@@ -68,6 +68,19 @@
 
       # The home-manager configurations (e.g): home-manager switch --flake ~/dev/ripxonix/#ripxorip@ripxowork
       homeConfigurations = {
+        "kristian@krkindwork" = lib.homeManagerConfiguration {
+          modules = [
+            ./home-manager
+          ];
+          pkgs = pkgsFor.x86_64-linux;
+          extraSpecialArgs = {
+            inherit inputs outputs stateVersion darkmode;
+            desktop = "gnome";
+            hostname = "krkindwork";
+            platform = "x86_64-linux";
+            username = "kristian";
+          };
+        };
         "ripxorip@vm" = lib.homeManagerConfiguration {
           modules = [
             ./home-manager
