@@ -31,6 +31,12 @@
         init = {
           defaultBranch = "master";
         };
+        merge = {
+          tool = "meld";
+        };
+        mergetool = {
+          prompt = false;
+        };
       };
     };
   };

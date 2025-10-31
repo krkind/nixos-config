@@ -89,7 +89,7 @@ in
 
       alias markdown_preview="grip -b"
 
-      bindkey -v
+      # bindkey -v
       # bindkey ii vi-cmd-mode
       # Appends every command to the history file once it is executed
       setopt inc_append_history
@@ -106,8 +106,8 @@ in
       setopt HIST_BEEP
 
       # Accpept suggestions with space
-      bindkey '^ ' autosuggest-accept
-      bindkey '^o' autosuggest-accept
+      # bindkey '^ ' autosuggest-accept
+      # bindkey '^o' autosuggest-accept
       # Reloads the history whenever you use it
       setopt share_history
 
@@ -154,17 +154,17 @@ in
           CURSOR=7
       }
 
-      zle -N gcam_bind
-      zle -N fdd
-      zle -N fzvv
-      zle -N fzkk
-      bindkey "^S" gcam_bind
-      bindkey "^T" fzvv
-      bindkey "^A" fzkk
-      bindkey '^G' fdd
-      bindkey '^F' fzf-file-widget
-      bindkey "^P" up-line-or-search
-      bindkey "^N" down-line-or-search
+      # zle -N gcam_bind
+      # zle -N fdd
+      # zle -N fzvv
+      # zle -N fzkk
+      # bindkey "^S" gcam_bind
+      # bindkey "^T" fzvv
+      # bindkey "^A" fzkk
+      # bindkey '^G' fdd
+      # bindkey '^F' fzf-file-widget
+      # bindkey "^P" up-line-or-search
+      # bindkey "^N" down-line-or-search
 
       mkdir -p ~/.history
       # Patch history to a shared directory
