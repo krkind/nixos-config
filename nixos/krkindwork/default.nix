@@ -77,4 +77,15 @@
     meld
     (pkgs.python3.withPackages (ps: with ps; [ pyserial python-lsp-server ]))
   ];
+
+  nixpkgs.config.allowUnsupportedSystem = true;
+
+  security.wrappers.dumpcap = {
+    source = "${pkgs.wireshark}/bin/dumpcap";
+    owner = "root";
+    group = "wireshark";
+    capabilities = "cap_net_raw,cap_net_admin+eip";
+  };
+
+  users.groups.wireshark = { };
 }
