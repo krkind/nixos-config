@@ -111,6 +111,10 @@ in
       # Reloads the history whenever you use it
       setopt share_history
 
+      gh() {
+          xdg-open "$(git config --get remote.origin.url | sed -E 's#^git@([^:]+):#https://\1/#; s#\.git$##')"
+      }
+
       # fzf keybindings
       # fd - cd to selected directory
       fzvv() {
