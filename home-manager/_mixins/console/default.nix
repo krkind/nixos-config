@@ -33,7 +33,7 @@
       dig
       matrix-sh
       wl-clipboard
-      notepadqq
+      # notepadqq
       obsidian
     ];
 
