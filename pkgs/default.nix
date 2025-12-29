@@ -5,8 +5,8 @@
   # Personal scripts
   key_extractor = pkgs.callPackage ./key_extractor { };
   matrix-sh = pkgs.callPackage ./matrix.sh { };
-  ripxobot = pkgs.callPackage ./ripxobot { };
+  # ripxobot = pkgs.callPackage ./ripxobot { inherit matrix-sh; };
   syncoid = pkgs.callPackage ./syncoid { };
   feed_fencer = pkgs.callPackage ./feed_fencer { };
-  usbip_plugger = pkgs.callPackage ./usbip_plugger { };
+  # usbip_plugger = pkgs.callPackage ./usbip_plugger { };
 }

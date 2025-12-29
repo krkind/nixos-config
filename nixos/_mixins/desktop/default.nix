@@ -22,7 +22,7 @@
     vlc
     kitty
     spotify
-    usbip_plugger
+    # usbip_plugger
   ];
 
 }

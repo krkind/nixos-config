@@ -13,7 +13,7 @@
   # In order for VSCode remote to work
   programs.nix-ld.enable = true;
 
-  sound.enable = true;
+  # sound.enable = true; NOT NEEDED FOR RTAUDIOGATEWAY
   hardware.pulseaudio.enable = false;
 
   fileSystems."/" = {
