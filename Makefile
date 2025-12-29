@@ -34,7 +34,7 @@ home_build:
 	sleep 3
 	sudo reboot
 os:
-	sudo nixos-rebuild switch --flake ~/dev/nixos-config/#${HOSTNAME}
+	sudo nixos-rebuild switch --flake .#${HOSTNAME}
 iso:
 	nix build .#nixosConfigurations.iso-desktop.config.system.build.isoImage
 vm:
