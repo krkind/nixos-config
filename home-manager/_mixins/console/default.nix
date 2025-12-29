@@ -26,7 +26,7 @@
       bitwarden-cli
       key_extractor
       tokei
-      du-dust
+      dust
       radare2
       wireguard-tools
       jq
