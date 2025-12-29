@@ -19,7 +19,7 @@
   };
 
   environment.systemPackages = with pkgs; [
-    vlc
+    # vlc
     kitty
     spotify
     # usbip_plugger
