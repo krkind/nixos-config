@@ -42,7 +42,7 @@ in
       plugins = [
         "git"
         "history-substring-search"
-        "last-working-dir"
+        # "last-working-dir"
       ];
     };
     initContent = ''
