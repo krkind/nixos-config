@@ -50,7 +50,7 @@
       lib = nixpkgs.lib // home-manager.lib;
 
       # https://nixos.wiki/wiki/FAQ/When_do_I_update_stateVersion
-      stateVersion = "25.05";
+      stateVersion = "25.11";
 
       systems = [ "x86_64-linux" "aarch64-linux" ];
       forEachSystem = f: lib.genAttrs systems (sys: f pkgsFor.${sys});
