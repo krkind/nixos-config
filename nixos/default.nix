@@ -99,6 +99,7 @@
     package = pkgs.unstable.nix;
     settings = {
       auto-optimise-store = true;
+      download-buffer-size = 134217728;  # 128 MiB
       experimental-features = [ "nix-command" "flakes" ];
     };
   };
