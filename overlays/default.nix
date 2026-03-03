@@ -7,10 +7,15 @@
   # This one contains whatever you want to overlay
   # You can change versions, add patches, set compilation flags, anything really.
   # https://nixos.wiki/wiki/Overlays
-  modifications = _final: _prev: {
-    # example = prev.example.overrideAttrs (oldAttrs: rec {
-    # ...
-    # });
+
+  modifications = final: prev: {
+    segger-ozone = prev.segger-ozone.overrideAttrs (old: {
+      nativeBuildInputs = (old.nativeBuildInputs or []) ++ [ final.makeWrapper ];
+      postFixup = (old.postFixup or "") + ''
+        wrapProgram $out/bin/Ozone \
+          --prefix LD_LIBRARY_PATH : ${final.systemd}/lib
+      '';
+    });
   };
 
   # When applied, the unstable nixpkgs set (declared in the flake inputs) will
