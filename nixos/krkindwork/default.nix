@@ -78,7 +78,16 @@
   # programs.talon.enable = true;
   programs.adb.enable = true;
 
+  nixpkgs.config.allowUnfreePredicate = pkg: builtins.elem (lib.getName pkg) [
+    "segger-jlink"
+    "segger-ozone"
+  ];
+
+  nixpkgs.config.segger-jlink.acceptLicense = true;
+
   environment.systemPackages = with pkgs; [
+    segger-jlink-headless
+    segger-ozone
     # obs-studio
     # remmina
     kicad
