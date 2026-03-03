@@ -87,10 +87,6 @@
 
   services.udev.packages = [ pkgs.segger-jlink-headless ];
 
-  environment.sessionVariables.NIX_LD_LIBRARY_PATH = [
-    "${pkgs.systemd.lib}/lib"
-  ];
-
   environment.systemPackages = with pkgs; [
     segger-jlink-headless
     segger-ozone
