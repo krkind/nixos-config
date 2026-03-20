@@ -109,6 +109,7 @@
     # samba
     meld
     claude-code
+    zellij
     (pkgs.python3.withPackages (ps: with ps; [ pyserial python-lsp-server ]))
   ];
 
