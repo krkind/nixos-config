@@ -33,6 +33,9 @@
       dig
       matrix-sh
       wl-clipboard
+      nix
+      nix-index
+      comma
       # notepadqq
       obsidian
     ];
@@ -53,6 +56,12 @@
     config = lib.mkIf (!darkmode) {
       theme = "GitHub";
     };
+  };
+
+  programs.nix-index = {
+    enable = true;
+    enableBashIntegration = true;
+    enableZshIntegration = true;
   };
 
   # Nicely reload system units when changing configs
