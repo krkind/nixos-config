@@ -96,7 +96,7 @@
     # prusa-slicer
     wireshark
     # reaper
-    # teams-for-linux
+    teams-for-linux
     # yabridge
     # yabridgectl
     # wineWowPackages.unstable
