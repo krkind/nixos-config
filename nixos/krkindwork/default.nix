@@ -110,6 +110,7 @@
     meld
     claude-code
     zellij
+    git-lfs
     (pkgs.python3.withPackages (ps: with ps; [ pyserial python-lsp-server ]))
   ];
 
