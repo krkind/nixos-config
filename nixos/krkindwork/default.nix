@@ -87,12 +87,19 @@
 
   services.udev.packages = [ pkgs.segger-jlink-headless ];
 
+  assertions = [
+    {
+      assertion = pkgs.unstable.kicad.version == "10.0.2";
+      message = "Expected pkgs.unstable.kicad.version to be 10.0.2, got ${pkgs.unstable.kicad.version}; update nixpkgs-unstable pin or adjust this assertion.";
+    }
+  ];
+
   environment.systemPackages = with pkgs; [
     segger-jlink-headless
     segger-ozone
     # obs-studio
     # remmina
-    kicad
+    unstable.kicad
     # prusa-slicer
     wireshark
     # reaper
