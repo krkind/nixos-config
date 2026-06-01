@@ -118,6 +118,7 @@
     claude-code
     zellij
     git-lfs
+    signal-desktop
     (pkgs.python3.withPackages (ps: with ps; [ pyserial python-lsp-server ]))
   ];
 
