@@ -89,8 +89,8 @@
 
   assertions = [
     {
-      assertion = pkgs.unstable.kicad.version == "10.0.2";
-      message = "Expected pkgs.unstable.kicad.version to be 10.0.2, got ${pkgs.unstable.kicad.version}; update nixpkgs-unstable pin or adjust this assertion.";
+      assertion = pkgs.unstable.kicad.version == "10.0.3";
+      message = "Expected pkgs.unstable.kicad.version to be 10.0.3, got ${pkgs.unstable.kicad.version}; update nixpkgs-unstable pin or adjust this assertion.";
     }
   ];
 
@@ -100,6 +100,7 @@
     # obs-studio
     # remmina
     unstable.kicad
+    # kicad
     # prusa-slicer
     wireshark
     # reaper
