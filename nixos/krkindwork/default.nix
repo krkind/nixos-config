@@ -125,6 +125,7 @@
   ];
 
   nixpkgs.config.allowUnsupportedSystem = true;
+  nixpkgs.config.permittedInsecurePackages = [ "docker-28.5.2" ];
 
   security.wrappers.dumpcap = {
     source = "${pkgs.wireshark}/bin/dumpcap";
