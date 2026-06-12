@@ -120,6 +120,7 @@
     zellij
     git-lfs
     signal-desktop
+    mqtt-explorer
     (pkgs.python3.withPackages (ps: with ps; [ pyserial python-lsp-server ]))
   ];
 
