@@ -76,7 +76,6 @@
   # In order for VSCode remote to work
   programs.nix-ld.enable = true;
   # programs.talon.enable = true;
-  programs.adb.enable = true;
 
   nixpkgs.config.allowUnfreePredicate = pkg: builtins.elem (lib.getName pkg) [
     "segger-jlink"
@@ -95,6 +94,7 @@
   ];
 
   environment.systemPackages = with pkgs; [
+    android-tools
     segger-jlink-headless
     segger-ozone
     # obs-studio

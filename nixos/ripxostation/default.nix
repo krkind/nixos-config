@@ -179,9 +179,9 @@
   networking.nameservers = [ "10.0.0.1" ];
 
   programs.talon.enable = true;
-  programs.adb.enable = true;
 
   environment.systemPackages = with pkgs; [
+    android-tools
     kicad
     (pkgs.python3.withPackages (ps: with ps; [ pyserial python-lsp-server ]))
     barrier

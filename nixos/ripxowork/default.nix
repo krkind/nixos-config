@@ -83,7 +83,6 @@
   # In order for VSCode remote to work
   programs.nix-ld.enable = true;
   programs.talon.enable = true;
-  programs.adb.enable = true;
 
   # PXE Boot example for the Pi
   #  services.dnsmasq.enable = true;
@@ -114,6 +113,7 @@
   #  '';
 
   environment.systemPackages = with pkgs; [
+    android-tools
     obs-studio
     remmina
     kicad
