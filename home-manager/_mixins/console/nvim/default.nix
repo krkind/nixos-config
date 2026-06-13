@@ -36,6 +36,7 @@ in
     vimAlias = true;
     vimdiffAlias = true;
     withNodeJs = true;
+    withRuby = false;
 
     plugins = with pkgs.vimPlugins; [
       bolt
