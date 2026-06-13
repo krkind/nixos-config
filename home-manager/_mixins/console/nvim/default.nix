@@ -55,11 +55,9 @@ in
       lsp_signature-nvim
       vim-vsnip
       nvim-treesitter.withAllGrammars
-      playground
       fzf-vim
       vim-tmux-navigator
       vim-unimpaired
-
       friendly-snippets
       cmp-nvim-lsp
       cmp-buffer
