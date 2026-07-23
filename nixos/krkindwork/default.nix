@@ -88,8 +88,8 @@
 
   assertions = [
     {
-      assertion = pkgs.unstable.kicad.version == "10.0.3";
-      message = "Expected pkgs.unstable.kicad.version to be 10.0.3, got ${pkgs.unstable.kicad.version}; update nixpkgs-unstable pin or adjust this assertion.";
+      assertion = pkgs.unstable.kicad.version == "10.0.4";
+      message = "Expected pkgs.unstable.kicad.version to be 10.0.4, got ${pkgs.unstable.kicad.version}; update nixpkgs-unstable pin or adjust this assertion.";
     }
   ];
 
