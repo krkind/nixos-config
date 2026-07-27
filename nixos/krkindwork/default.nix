@@ -116,7 +116,7 @@
     # distrobox
     # samba
     meld
-    claude-code
+    unstable.claude-code
     zellij
     git-lfs
     signal-desktop
