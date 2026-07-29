@@ -84,7 +84,7 @@
 
   nixpkgs.config.segger-jlink.acceptLicense = true;
 
-  services.udev.packages = [ pkgs.segger-jlink-headless ];
+  services.udev.packages = [ pkgs.segger-jlink ];
 
   assertions = [
     {
@@ -95,7 +95,15 @@
 
   environment.systemPackages = with pkgs; [
     android-tools
-    segger-jlink-headless
+    # segger-jlink-headless ships only libjlinkarm + udev rules; the full
+    # package is what provides JLinkExe/JLinkGDBServer/JFlash etc.
+    segger-jlink
+    # SEGGER names the commander `JLinkExe`; expose a lowercase `jlink` so
+    # flashing scripts can call it by that name.
+    (runCommandLocal "jlink-alias" { } ''
+      mkdir -p $out/bin
+      ln -s ${segger-jlink}/bin/JLinkExe $out/bin/jlink
+    '')
     segger-ozone
     # obs-studio
     # remmina
@@ -125,7 +133,12 @@
   ];
 
   nixpkgs.config.allowUnsupportedSystem = true;
-  nixpkgs.config.permittedInsecurePackages = [ "docker-28.5.2" ];
+  nixpkgs.config.permittedInsecurePackages = [
+    "docker-28.5.2"
+    # Bundled Qt4 that the (non-headless) segger-jlink GUI tools link against.
+    # Version-pinned upstream; bump alongside the segger-jlink version.
+    "segger-jlink-qt4-874"
+  ];
 
   security.wrappers.dumpcap = {
     source = "${pkgs.wireshark}/bin/dumpcap";
