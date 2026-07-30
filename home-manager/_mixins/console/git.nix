@@ -15,6 +15,9 @@
           email = "kristian.kinderlov@airolit.com";
           name = "Kristian Kinderlöv";
         };
+        core = {
+          pager = "less -FRX";
+        };
         push = {
           default = "matching";
         };
