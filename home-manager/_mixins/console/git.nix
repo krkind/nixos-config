@@ -2,6 +2,7 @@
   programs = {
     git = {
       enable = true;
+      lfs.enable = true;
       settings = {
         alias = {
           adog = "log --all --decorate --oneline --graph";
