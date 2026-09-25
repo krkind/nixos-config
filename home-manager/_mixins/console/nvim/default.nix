@@ -41,8 +41,8 @@ in
 
     plugins = with pkgs.vimPlugins; [
       bolt
-      copilot-lua
-      CopilotChat-nvim
+      # copilot-lua
+      # CopilotChat-nvim
       ChatGPT-nvim
       nvim-lspconfig
       gitsigns-nvim
@@ -68,7 +68,7 @@ in
       nvim-cmp
       luasnip
       cmp_luasnip
-      copilot-cmp
+      # copilot-cmp
 
     ];
 
