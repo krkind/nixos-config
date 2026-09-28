@@ -44,6 +44,10 @@
   boot.kernelParams = [ "i915.force_probe=7d55" ];  # Needed for proper installation of Intel Arc firmware
   boot.extraModulePackages = [ ];
 
+  # iPhone: usbmuxd handles pairing/photo access (GNOME's gvfs picks it up)
+  # and USB tethering via the ipheth driver, which NetworkManager then uses.
+  services.usbmuxd.enable = true;
+
   services.envfs.enable = true;
   services.printing.enable = true;
 
@@ -95,6 +99,8 @@
 
   environment.systemPackages = with pkgs; [
     android-tools
+    libimobiledevice
+    ifuse
     # segger-jlink-headless ships only libjlinkarm + udev rules; the full
     # package is what provides JLinkExe/JLinkGDBServer/JFlash etc.
     segger-jlink
