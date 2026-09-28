@@ -48,6 +48,11 @@
   # which NetworkManager then uses. Photos show up in Files through gvfs'
   # gphoto2 monitor, which only sees the phone's PTP interface once
   # libgphoto2's udev rules tag it with ID_GPHOTO2.
+  #
+  # The NixOS module leaves out usbmuxd's own udev rules, so the kernel binds
+  # the phone in config 1 and usbmuxd's switch to config 4 races the
+  # re-enumeration, wedging the daemon until it is restarted. Upstream's rules
+  # park the phone in config 0 on plug-in so usbmuxd switches it cleanly.
   services.usbmuxd.enable = true;
   programs.gphoto2.enable = true;
 
@@ -91,7 +96,7 @@
 
   nixpkgs.config.segger-jlink.acceptLicense = true;
 
-  services.udev.packages = [ pkgs.segger-jlink ];
+  services.udev.packages = [ pkgs.segger-jlink config.services.usbmuxd.package ];
 
   assertions = [
     {
