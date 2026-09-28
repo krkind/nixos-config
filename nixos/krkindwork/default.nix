@@ -44,9 +44,12 @@
   boot.kernelParams = [ "i915.force_probe=7d55" ];  # Needed for proper installation of Intel Arc firmware
   boot.extraModulePackages = [ ];
 
-  # iPhone: usbmuxd handles pairing/photo access (GNOME's gvfs picks it up)
-  # and USB tethering via the ipheth driver, which NetworkManager then uses.
+  # iPhone: usbmuxd handles pairing and USB tethering via the ipheth driver,
+  # which NetworkManager then uses. Photos show up in Files through gvfs'
+  # gphoto2 monitor, which only sees the phone's PTP interface once
+  # libgphoto2's udev rules tag it with ID_GPHOTO2.
   services.usbmuxd.enable = true;
+  programs.gphoto2.enable = true;
 
   services.envfs.enable = true;
   services.printing.enable = true;
