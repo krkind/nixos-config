@@ -31,6 +31,9 @@
 
     darkmode_flag.url = "github:boolean-option/true";
 
+    herdr.url = "github:herdrdev/herdr/v0.9.3";
+    herdr.inputs.nixpkgs.follows = "nixpkgs";
+
   };
   outputs =
     { self

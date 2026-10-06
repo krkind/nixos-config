@@ -1,5 +1,5 @@
 # Krkinds Work Computer
-{ config, lib, pkgs, ... }:
+{ config, lib, pkgs, inputs, ... }:
 
 {
   imports = [
@@ -139,6 +139,7 @@
     # samba
     meld
     unstable.claude-code
+    inputs.herdr.packages.${pkgs.stdenv.hostPlatform.system}.default
     zellij
     git-lfs
     signal-desktop
