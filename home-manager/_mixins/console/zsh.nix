@@ -111,7 +111,7 @@ in
       # Reloads the history whenever you use it
       setopt share_history
 
-      gh() {
+      gho() {
           xdg-open "$(git config --get remote.origin.url | sed -E 's#^git@([^:]+):#https://\1/#; s#\.git$##')"
       }
 
