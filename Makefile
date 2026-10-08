@@ -9,7 +9,12 @@ ifndef USER
  $(error User unknown)
 endif
 
-.PHONY: help home home_build os iso vm index test-comma
+# `make home light` / `make all light` build with the light theme
+ifneq ($(filter light,$(MAKECMDGOALS)),)
+ DARKMODE_OVERRIDE = --override-input darkmode_flag github:boolean-option/false
+endif
+
+.PHONY: help all home home_build os iso vm index test-comma light
 
 help:
 	@printf "\n"
@@ -20,6 +25,8 @@ help:
 	@printf "\033[1;33mUsage:\033[0m make <target>\n"
 	@printf "\n"
 	@printf "\033[1;33mTargets:\033[0m\n"
+	@printf "  \033[1;32mall\033[0m               Run os, then home\n"
+	@printf "\n"
 	@printf "  \033[1;32mhome\033[0m              Apply home-manager configuration\n"
 	@printf "                    (use '\033[1;32mmake home light\033[0m' for light mode)\n"
 	@printf "\n"
@@ -38,12 +45,9 @@ help:
 	@printf "  \033[1;32mhelp\033[0m              Show this help message\n"
 	@printf "\n"
 
+all: os home
 home:
-ifdef light
-	home-manager switch -b backup --flake ~/dev/nixos-config/#${USER}@${HOSTNAME} --override-input darkmode_flag github:boolean-option/false
-else
-	home-manager switch -b backup --flake ~/dev/nixos-config/#${USER}@${HOSTNAME}
-endif
+	home-manager switch -b backup --flake ~/dev/nixos-config/#${USER}@${HOSTNAME} $(DARKMODE_OVERRIDE)
 # FIXME No idea why I have to issue `nix profile list` first, if I don't, I get
 # no suitable profile found from home-manager?
 home_build:
@@ -66,3 +70,7 @@ index:
 
 test-comma:
 	, cowsay "Hello"
+
+# No-op goal so `light` can be passed alongside home/all
+light:
+	@:
