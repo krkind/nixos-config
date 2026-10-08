@@ -193,26 +193,13 @@
               desktop = "plasma";
             };
           };
+          # Home is applied standalone (make home), not via the NixOS
+          # module, so a reboot cannot reactivate a stale user config.
           krkindwork = lib.nixosSystem {
             modules = [
               ./nixos
               agenix.nixosModules.age
               talon-nix.nixosModules.talon
-              home-manager.nixosModules.home-manager
-              {
-                home-manager.users.kristian = {
-                  imports = [
-                    ./home-manager
-                  ];
-                };
-                home-manager.extraSpecialArgs = {
-                  inherit inputs outputs stateVersion darkmode;
-                  desktop = "gnome";
-                  hostname = "krkindwork";
-                  username = "kristian";
-                  platform = "x86_64-linux";
-                };
-              }
             ];
             specialArgs = {
               inherit inputs outputs stateVersion;

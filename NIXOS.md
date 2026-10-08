@@ -24,6 +24,14 @@ Hostname examples use `krkindwork` and user `kristian`.
 - `nixos-rebuild` applies **system** config.
 - `home-manager` applies **user** config.
 
+On krkindwork the two are independent — pick by what you edited:
+
+| Changed | Run |
+|---|---|
+| `nixos/` | `make os` |
+| `home-manager/` | `make home` (`make home light` for light theme) |
+| `flake.lock`, `overlays/`, `pkgs/` | `make all` (os, then home) |
+
 ```bash
 # Rebuild and make it the boot default
 sudo nixos-rebuild switch --flake .#krkindwork
