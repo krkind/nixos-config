@@ -20,7 +20,7 @@
           pager = "less -FRX";
         };
         push = {
-          default = "matching";
+          default = "simple";
         };
         pull = {
           rebase = true;
