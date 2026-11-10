@@ -98,18 +98,6 @@
 
   services.udev.packages = [ pkgs.segger-jlink config.services.usbmuxd.package ];
 
-  # Logitech C920 webcam picture settings, applied on plug-in.
-  #
-  # USB autosuspend has to be off: the camera suspends after 2 s idle, and on
-  # resume the driver restores every control except the white balance
-  # temperature, which falls back to 5000 K. The C920 also rejects a
-  # temperature write unless it comes in the same call that turns automatic
-  # white balance off, which is why both are passed together.
-  services.udev.extraRules = ''
-    ACTION=="add", SUBSYSTEM=="usb", ATTR{idVendor}=="046d", ATTR{idProduct}=="08e5", ATTR{power/control}="on"
-    ACTION=="add", SUBSYSTEM=="video4linux", ATTRS{idVendor}=="046d", ATTRS{idProduct}=="08e5", ATTR{index}=="0", RUN+="${pkgs.v4l-utils}/bin/v4l2-ctl -d $devnode -c white_balance_automatic=0 -c white_balance_temperature=3600 -c exposure_dynamic_framerate=0 -c power_line_frequency=1 -c contrast=140 -c brightness=150 -c sharpness=110 -c backlight_compensation=1"
-  '';
-
   assertions = [
     {
       assertion = pkgs.unstable.kicad.version == "10.0.7";
